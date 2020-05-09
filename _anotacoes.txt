@@ -1,0 +1,66 @@
+php artisan ide-helper:generate
+php artisan ide-helper:meta
+php artisan ide-helper:models
+
+
+composer require --dev barryvdh/laravel-ide-helper
+composer require --dev doctrine/dba1:~2.3
+
+docker-compose exec -it app
+
+php artisan ide-helper:models
+
+no
+
+_ide_helper_models.php
+
+\App\Models\Category::all()
+
+bash-4.4# history
+    1  php artisan make:model --help
+    2  php artisan make:model Models/Category --all
+    3  php artisan make:seeder CategoriesTableSeeder
+    4  php artisan make:seeder CategoriesTableSeeder
+    5  php artisan migrate --seed
+    6  php artisan migrate --seed
+    7  php artisan tinker
+    8  history
+
+php artisan migrate:refresh --seed
+php artisan migrate:fresh --seed
+
+php artisan route:list
+
+
+php artisan make:request CategoryRequest
+
+php artisan migrate:refresh --seed
+
+
+bash-4.4# php artisan tinker
+Psy Shell v0.9.9 (PHP 7.3.6 — cli) by Justin Hileman
+>>> use \App\Models\Category;
+>>> Category::find(1)->delete();
+=> true
+>>> Category::find(1);
+=> null
+>>> Category::withTrashed()->find(1);
+=> App\Models\Category {#3086
+     id: 1,
+     name: "MediumPurple",
+     description: "Dolor excepturi omnis tempore praesentium qui quia.",
+     is_active: 1,
+     deleted_at: "2020-05-09 18:27:12",
+     created_at: "2020-05-09 18:23:02",
+     updated_at: "2020-05-09 18:27:12",
+   }
+
+Category::onlyTrashed()->get();
+Category::onlyTrashed()->find(1)->restore();
+
+
+Category::find(1)->forceDelete();
+
+
+use Ramsey\Uuid\Uuid;
+echo Uuid::uuid4();
