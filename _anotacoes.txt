@@ -64,3 +64,16 @@ Category::find(1)->forceDelete();
 
 use Ramsey\Uuid\Uuid;
 echo Uuid::uuid4();
+
+
+// Testes
+//Rodar os testes
+vendor/bin/phpunit
+
+vendor/bin/phpunit --filter CategoryTest
+
+vendor/bin/phpunit tests/Unit/CategoryTest
+
+//Criar uma nova classe de teste unitário
+php artisan make:test --help
+php artisan make:test CategoryTest --unit
