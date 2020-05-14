@@ -71,6 +71,7 @@ echo Uuid::uuid4();
 vendor/bin/phpunit
 
 vendor/bin/phpunit --filter CategoryTest
+vendor/bin/phpunit --filter CategoryTest::testIfUseTraits
 
 vendor/bin/phpunit tests/Unit/CategoryTest
 

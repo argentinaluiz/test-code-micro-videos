@@ -8,9 +8,12 @@ use App\Models\Traits\Uuid;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+//use Illuminate\Foundation\Testing\DatabaseMigrations;
 
 class CategoryTest extends TestCase
 {
+    //use DatabaseMigrations;
+
     public function testFillable()
     {
         $fillable = ['name', 'description', 'is_active'];
@@ -20,6 +23,8 @@ class CategoryTest extends TestCase
 
     public function testIfUseTraits()
     {
+        //Genre::create(['name' => 'test']);
+
         // print_r(class_uses(Category::class));
         // print_r("Fim");
         $traits = [
