@@ -133,10 +133,6 @@ class GenreControllerTest extends TestCase
             ->assertJsonFragment([
                 "is_active" => true
             ]);
-
-        $response = $this->json("PUT", route("genres.update", ["genre" => $genre->id]), [
-            "name" => "test"
-            ]);      
     }
 
     public function testDelete()
