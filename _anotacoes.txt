@@ -82,3 +82,6 @@ php artisan make:test CategoryTest --unit
 
 ///Conhecendo o phpunit
 php artisan make:test Models/CategoryTest
+
+php artisan make:migration create_users_table --create=users
+php artisan migrate
